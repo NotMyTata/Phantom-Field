@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "phantom-field", "phantom-field.csproj", "{1F91D338-9A36-4A53-B351-4C0A707C8635}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1F91D338-9A36-4A53-B351-4C0A707C8635}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F91D338-9A36-4A53-B351-4C0A707C8635}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F91D338-9A36-4A53-B351-4C0A707C8635}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F91D338-9A36-4A53-B351-4C0A707C8635}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F74A3D26-4391-4FD8-AED4-FCB0692B9A74}
+	EndGlobalSection
+EndGlobal
