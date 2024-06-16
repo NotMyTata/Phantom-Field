@@ -3,6 +3,22 @@
   "WorkspaceRootPath": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\gamewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\gamewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\mywindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\mywindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\sounds\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:sounds\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\phantomfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:phantomfield.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,25 +30,73 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
             },
             {
               "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Audio.cs",
+              "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\sounds\\Audio.cs",
+              "RelativeDocumentMoniker": "sounds\\Audio.cs",
+              "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\sounds\\Audio.cs",
+              "RelativeToolTip": "sounds\\Audio.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:46:33.173Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PopUpWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\PopUpWindow.cs",
+              "RelativeDocumentMoniker": "Windows\\PopUpWindow.cs",
+              "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\PopUpWindow.cs",
+              "RelativeToolTip": "Windows\\PopUpWindow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:32:01.685Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MyWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\MyWindow.cs",
+              "RelativeDocumentMoniker": "Windows\\MyWindow.cs",
+              "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\MyWindow.cs",
+              "RelativeToolTip": "Windows\\MyWindow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:31:26.112Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "GameWindow.cs",
+              "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\GameWindow.cs",
+              "RelativeDocumentMoniker": "Windows\\GameWindow.cs",
+              "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\GameWindow.cs",
+              "RelativeToolTip": "Windows\\GameWindow.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-16T03:25:38.11Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "PhantomField.cs",
               "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\PhantomField.cs",
               "RelativeDocumentMoniker": "PhantomField.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\PhantomField.cs",
               "RelativeToolTip": "PhantomField.cs",
-              "ViewState": "AQIAAGMAAAAAAAAAAAAewMIAAAAMAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-05T13:39:11.601Z",
               "EditorCaption": ""
