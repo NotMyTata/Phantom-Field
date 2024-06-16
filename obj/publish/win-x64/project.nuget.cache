@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "bJBk6AVTIDH6GmXwXc6Z5tiJITrfR/RkrBrIO+ml5xJfE07eQK2W9nsAVFeiYerGqYvDx5hv/raWlS0VUhdR1A==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\phantom-field.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sasmita\\.nuget\\packages\\microsoft.net.illink.tasks\\8.0.3\\microsoft.net.illink.tasks.8.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

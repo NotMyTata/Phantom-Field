@@ -7,27 +7,35 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <ApplicationIcon>Images\Icon.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="sounds\lose.wav" />
-    <None Remove="sounds\start.wav" />
-    <None Remove="sounds\win.wav" />
+    <None Remove="Audio\lose.wav" />
+    <None Remove="Audio\start.wav" />
+    <None Remove="Audio\win.wav" />
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="sounds\click.wav">
+    <Content Include="Audio\click.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\lose.wav">
+    <Content Include="Audio\lose.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\start.wav">
+    <Content Include="Audio\start.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="sounds\win.wav">
+    <Content Include="Audio\win.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Windows\Game\image\" />
   </ItemGroup>
 
 </Project>

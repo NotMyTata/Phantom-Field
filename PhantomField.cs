@@ -1,4 +1,4 @@
-﻿using phantom_field.Windows;
+﻿using phantom_field.Windows.MainMenu;
 using System.Windows;
 
 namespace phantom_field
@@ -8,7 +8,8 @@ namespace phantom_field
         [STAThread]
         static void Main()
         {
-            new GameWindow().ShowDialog();
+            Application app = new Application();
+            app.Run(new MainMenuWindow());
         }
     }
 }
