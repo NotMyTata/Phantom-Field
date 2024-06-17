@@ -1,11 +1,10 @@
 ﻿using System;
-using System.Configuration;
-using System.Security.Cryptography.X509Certificates;
-using System.Web;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Threading;
 using phantom_field.sounds;
+using phantom_field.Windows.MainMenu;
 using phantom_field.Windows.PopUp;
 
 namespace phantom_field.Windows.Game
@@ -14,10 +13,14 @@ namespace phantom_field.Windows.Game
     {
         Tile[,] tileList;
         Label flag, time;
+        DispatcherTimer dispatcherTimer;
+        public static TimeSpan timeLeft;
         static public int level;
+        bool hasStarted;
 
         public GameWindow()
         {
+            hasStarted = false;
             setSize();
             tileList = new Tile[Tile.size+1, Tile.size];
             setTotalBomb(GenerateRandomBomb());
@@ -26,64 +29,11 @@ namespace phantom_field.Windows.Game
             CreateBombs();
             CreateTiles();
             MarkAdjacentBomb();
+            ValidateBomb();
             AddChildren();
 
             Title = "Phantom Field, Difficulty: " + getStringLevel(level);
             Height = 700; Width = 600;
-            Audio.playStart();
-        }
-
-        protected override void CreateHeader()
-        {
-            RowDefinition rd = new RowDefinition();
-            rd.MinHeight = 100;
-            rd.MaxHeight = 100;
-            GRID.RowDefinitions.Add(rd);
-            
-            Border header = new Border();
-            header.Background = new SolidColorBrush(Color.FromRgb(244, 117, 27));
-            Grid.SetColumnSpan(header, Tile.size);
-            GRID.Children.Add(header);
-
-            flag = new Label();
-            flag.Content = Tile.totalFlag.ToString();
-            flag.FontSize = 24;
-            flag.Margin = new Thickness(10);
-            flag.HorizontalAlignment = HorizontalAlignment.Left;
-            flag.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetColumnSpan(flag, Tile.size);
-            GRID.Children.Add(flag);
-
-            time = new Label();
-            time.Content = "05:00";
-            time.FontSize = 24;
-            time.Margin = new Thickness(10);
-            time.HorizontalAlignment = HorizontalAlignment.Center;
-            time.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetColumnSpan(time, Tile.size);
-            GRID.Children.Add(time);
-
-            Label dif = new Label();
-            dif.Content = getStringLevel(level);
-            dif.FontSize = 24;
-            dif.Margin = new Thickness(10);
-            dif.HorizontalAlignment = HorizontalAlignment.Right;
-            dif.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetColumnSpan(dif, Tile.size);
-            GRID.Children.Add(dif);
-        }
-
-        protected override void CreateBorder(int X, int Y, int ColSpan, int RowSpan)
-        {
-            Border border = new Border();
-            border.Background = Brushes.LightYellow;
-            border.BorderBrush = Brushes.Black;
-            border.BorderThickness = new Thickness(1);
-            Grid.SetColumn(border, X);
-            Grid.SetRow(border, Y);
-            Grid.SetColumnSpan(border, ColSpan);
-            Grid.SetRowSpan(border, RowSpan);
-            GRID.Children.Add(border);
         }
 
         // Set Difficulty
@@ -109,9 +59,9 @@ namespace phantom_field.Windows.Game
         {
             switch (level)
             {
-                case 1: return new Random().Next(10, 14);
-                case 2: return new Random().Next(15, 20);
-                default: return new Random().Next(3, 4);
+                case 1: return new Random().Next(39, 49);
+                case 2: return new Random().Next(80, 100);
+                default: return new Random().Next(5, 6);
             }
         }
         
@@ -124,9 +74,25 @@ namespace phantom_field.Windows.Game
                 int PosX = rnd.Next(1, Tile.size);
                 int PosY = rnd.Next(1, Tile.size);
 
+                while (tileList[PosY, PosX] != null && tileList[PosY, PosX].isBomb == true)
+                {
+                    PosX = rnd.Next(1, Tile.size);
+                    PosY = rnd.Next(1, Tile.size);
+                }
+
                 CreateNewTiles(PosX, PosY);
                 tileList[PosY, PosX].isBomb = true;
             }
+        }
+
+        void ValidateBomb()
+        {
+            int bomb = 0;
+            foreach(Tile tile in tileList)
+            {
+                if (tile != null && tile.isBomb) bomb++;
+            }
+            if (bomb != Tile.totalBomb) this.Close();
         }
 
         // Tiles
@@ -208,35 +174,6 @@ namespace phantom_field.Windows.Game
             Tile.tilesLeft--;
         }
 
-        void CreateLabel(Tile tile)
-        {
-            Label newLabel = new Label();
-            newLabel.Content = tile.Number.ToString();
-            newLabel.FontSize = 16;
-            newLabel.Foreground = SetLabelColor(tile.Number);
-            newLabel.HorizontalAlignment = HorizontalAlignment.Center;
-            newLabel.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetColumn(newLabel, tile.PosX);
-            Grid.SetRow(newLabel, tile.PosY);
-            GRID.Children.Add(newLabel);
-        }
-
-        SolidColorBrush SetLabelColor(int number)
-        {
-            switch (number)
-            {
-                case 1: return Brushes.Blue;
-                case 2: return Brushes.Green;
-                case 3: return Brushes.Red;
-                case 4: return Brushes.Purple;
-                case 5: return Brushes.Yellow;
-                case 6: return Brushes.Aquamarine;
-                case 7: return Brushes.Black;
-                case 8: return Brushes.Gray;
-                default: return Brushes.White;
-            }
-        }
-
         void OpenAdjacentTile(int X, int Y)
         {
             for (int i = -1; i <= 1; i++)
@@ -268,6 +205,11 @@ namespace phantom_field.Windows.Game
                 else
                 {
                     Audio.playClick();
+                    if (!hasStarted)
+                    {
+                        dispatcherTimer.Start();
+                        hasStarted = true;
+                    }
                     OpenTile(tile);
                     if (tile.Number == 0) OpenAdjacentTile(tile.PosX, tile.PosY);
                     if (Tile.tilesLeft == 0)
@@ -310,8 +252,38 @@ namespace phantom_field.Windows.Game
             }
         }
 
+        void CreateLabel(Tile tile)
+        {
+            Label newLabel = new Label();
+            newLabel.Content = tile.Number.ToString();
+            newLabel.FontSize = 16;
+            newLabel.Foreground = SetLabelColor(tile.Number);
+            newLabel.HorizontalAlignment = HorizontalAlignment.Center;
+            newLabel.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetColumn(newLabel, tile.PosX);
+            Grid.SetRow(newLabel, tile.PosY);
+            GRID.Children.Add(newLabel);
+        }
+
+        SolidColorBrush SetLabelColor(int number)
+        {
+            switch (number)
+            {
+                case 1: return Brushes.Blue;
+                case 2: return Brushes.Green;
+                case 3: return Brushes.Red;
+                case 4: return Brushes.Purple;
+                case 5: return Brushes.DarkOrange;
+                case 6: return Brushes.Aquamarine;
+                case 7: return Brushes.Black;
+                case 8: return Brushes.Gray;
+                default: return Brushes.White;
+            }
+        }
+
         void OpenPopUpWindow(bool Won)
         {
+            dispatcherTimer.Stop();
             PopUpWindow PUW = new PopUpWindow(Won);
             PUW.Parent = this;
             PUW.ShowDialog();
@@ -335,6 +307,88 @@ namespace phantom_field.Windows.Game
                 case 2: return "Hard";
                 default: return "Easy";
             }
+        }
+
+        protected override void OnWindowLoaded(object sender, RoutedEventArgs e)
+        {
+            Audio.playStart();
+        }
+
+        protected override void OnWindowClosing(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void CreateTimer()
+        {
+            timeLeft = TimeSpan.FromMinutes(5);
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = new TimeSpan(0,0,0,1);
+            dispatcherTimer.Tick += Countdown;
+        }
+
+        private void Countdown(object sender, EventArgs e)
+        {
+            if (timeLeft == TimeSpan.Zero) OpenPopUpWindow(false);
+            else
+            {
+                timeLeft -= TimeSpan.FromSeconds(1);
+                time.Content = timeLeft.ToString();
+            }
+        }
+
+        protected override void CreateHeader()
+        {
+            RowDefinition rd = new RowDefinition();
+            rd.MinHeight = 100;
+            rd.MaxHeight = 100;
+            GRID.RowDefinitions.Add(rd);
+
+            Border header = new Border();
+            header.Background = new SolidColorBrush(Color.FromRgb(244, 117, 27));
+            Grid.SetColumnSpan(header, Tile.size);
+            GRID.Children.Add(header);
+
+            flag = new Label();
+            flag.Content = Tile.totalFlag.ToString();
+            flag.FontSize = 24;
+            flag.Margin = new Thickness(10);
+            flag.HorizontalAlignment = HorizontalAlignment.Left;
+            flag.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetColumnSpan(flag, Tile.size);
+            GRID.Children.Add(flag);
+
+            time = new Label();
+            CreateTimer();
+            time.Content = timeLeft.ToString();
+            time.FontSize = 24;
+            time.Margin = new Thickness(10);
+            time.HorizontalAlignment = HorizontalAlignment.Center;
+            time.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetColumnSpan(time, Tile.size);
+            GRID.Children.Add(time);
+
+            Label dif = new Label();
+            dif.Content = getStringLevel(level);
+            dif.FontSize = 24;
+            dif.Margin = new Thickness(10);
+            dif.HorizontalAlignment = HorizontalAlignment.Right;
+            dif.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetColumnSpan(dif, Tile.size);
+            GRID.Children.Add(dif);
+        }
+
+        protected override void CreateBorder(int X, int Y, int ColSpan, int RowSpan)
+        {
+            Border border = new Border();
+            border.Background = Brushes.LightYellow;
+            border.BorderBrush = Brushes.Black;
+            border.BorderThickness = new Thickness(1);
+            Grid.SetColumn(border, X);
+            Grid.SetRow(border, Y);
+            Grid.SetColumnSpan(border, ColSpan);
+            Grid.SetRowSpan(border, RowSpan);
+            GRID.Children.Add(border);
         }
     }
 }

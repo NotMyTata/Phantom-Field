@@ -13,8 +13,13 @@ namespace phantom_field.Windows
         {
             GRID = new Grid();
             Content = GRID;
+            Background = new SolidColorBrush(Color.FromRgb(244, 117, 27));
+            BorderBrush = Brushes.White;
+            BorderThickness = new Thickness(2);
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
-            ResizeMode = ResizeMode.CanMinimize;
+            ResizeMode = ResizeMode.NoResize;
+            Loaded += OnWindowLoaded;
+            Closed += new EventHandler(OnWindowClosing);
         }
 
         protected virtual void CreateColRowDef(int n)
@@ -46,5 +51,7 @@ namespace phantom_field.Windows
         protected virtual void CreateButton() { }
         protected virtual void CreateBorder(int X, int Y, int ColSpan, int RowSpan) { }
         protected virtual void CreateBackground(int X, int Y, int ColSpan, int RowSpan) { }
+        protected virtual void OnWindowLoaded(object sender, RoutedEventArgs e) { }
+        protected virtual void OnWindowClosing(object sender, EventArgs e) { }
     }
 }

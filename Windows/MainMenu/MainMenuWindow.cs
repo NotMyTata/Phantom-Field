@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
 using phantom_field.Windows.Game;
 
 namespace phantom_field.Windows.MainMenu
@@ -34,6 +35,10 @@ namespace phantom_field.Windows.MainMenu
                 Button btnLevel = new Button();
                 btnLevel.Content = GameWindow.getStringLevel(i - 1);
                 btnLevel.Margin = new Thickness(10);
+                btnLevel.FontSize = 24;
+                btnLevel.Background = Brushes.Orange;
+                btnLevel.BorderBrush = Brushes.Black;
+                btnLevel.BorderThickness = new Thickness(2);
                 btnLevel.Click += button_clicked;
                 Grid.SetRow(btnLevel, i);
                 GRID.Children.Add(btnLevel);
@@ -46,9 +51,13 @@ namespace phantom_field.Windows.MainMenu
             if (button.Content.ToString() == "Easy") GameWindow.level = 0;
             else if (button.Content.ToString() == "Medium") GameWindow.level = 1;
             else if (button.Content.ToString() == "Hard") GameWindow.level = 2;
-
             new GameWindow().Show();
             this.Close();
+        }
+
+        protected override void OnWindowClosing(object sender, EventArgs e)
+        {
+            
         }
     }
 }
