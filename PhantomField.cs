@@ -9,7 +9,6 @@ namespace phantom_field
         static void Main()
         {
             Application app = new Application();
-            Application.Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
             app.Run(new MainMenuWindow());
         }
     }
