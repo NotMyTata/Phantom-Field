@@ -1,0 +1,7 @@
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\phantom-field.pdb
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\click.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\lose.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\start.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\win.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Images\Icon.ico
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\phantom-field.exe
