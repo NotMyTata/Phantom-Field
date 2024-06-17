@@ -51,7 +51,7 @@ namespace phantom_field.Windows
         protected virtual void CreateButton() { }
         protected virtual void CreateBorder(int X, int Y, int ColSpan, int RowSpan) { }
         protected virtual void CreateBackground(int X, int Y, int ColSpan, int RowSpan) { }
-        protected virtual void OnWindowLoaded(object sender, RoutedEventArgs e) { }
+        protected virtual void OnWindowLoaded(object sender, EventArgs e) { }
         protected virtual void OnWindowClosing(object sender, EventArgs e) { }
     }
 }
