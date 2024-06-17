@@ -26,13 +26,12 @@ namespace phantom_field.Windows.Game
             countdownTime = 5;
             setSize();
             tileList = new Tile[Tile.size+1, Tile.size];
-            setTotalBomb(GenerateRandomBomb());
+            setTotalPhantom(GenerateRandomPhantom());
             CreateHeader();
             CreateColRowDef(Tile.size);
-            CreateBombs();
+            CreatePhantom();
             CreateTiles();
             MarkAdjacentBomb();
-            ValidateBomb();
             AddChildren();
 
             Title = "Phantom Field, Difficulty: " + getStringLevel(level);
@@ -53,15 +52,15 @@ namespace phantom_field.Windows.Game
             }
         }
 
-        void setTotalBomb(int n)
+        void setTotalPhantom(int n)
         {
-            Tile.totalBomb = n;
+            Tile.totalPhantom = n;
             Tile.totalFlag = n;
-            Tile.tilesLeft = Tile.size * Tile.size - Tile.totalBomb;
+            Tile.tilesLeft = Tile.size * Tile.size - Tile.totalPhantom;
         }
 
-        // Bombs
-        int GenerateRandomBomb()
+        // Phantom (Bombs)
+        int GenerateRandomPhantom()
         {
             int temp = Tile.size*Tile.size;
             switch (level)
@@ -72,46 +71,46 @@ namespace phantom_field.Windows.Game
             }
         }
         
-        void CreateBombs()
+        void CreatePhantom()
         {
             Random rnd = new Random();
-            int temp = Tile.totalBomb;
+            int temp = Tile.totalPhantom;
             while (temp-- > 0)
             {
                 int PosX = rnd.Next(1, Tile.size);
                 int PosY = rnd.Next(1, Tile.size);
 
-                while (tileList[PosY, PosX] != null && tileList[PosY, PosX].isBomb == true)
+                while (tileList[PosY, PosX] != null && tileList[PosY, PosX].isPhantom == true)
                 {
                     PosX = rnd.Next(1, Tile.size);
                     PosY = rnd.Next(1, Tile.size);
                 }
 
                 CreateNewTiles(PosX, PosY);
-                tileList[PosY, PosX].isBomb = true;
+                tileList[PosY, PosX].isPhantom = true;
             }
         }
 
-        void ValidateBomb()
-        {
-            int bomb = 0;
-            foreach(Tile tile in tileList)
-            {
-                if (tile != null && tile.isBomb) bomb++;
-            }
-            if (bomb != Tile.totalBomb) this.Close();
-        }
+        //void ValidatePhantom()
+        //{
+        //    int phantom = 0;
+        //    foreach(Tile tile in tileList)
+        //    {
+        //        if (tile != null && tile.isPhantom) phantom++;
+        //    }
+        //    if (phantom != Tile.totalPhantom) this.Close();
+        //}
 
         // Tiles
         class Tile : Button
         {
-            public static int size, totalBomb, totalFlag, tilesLeft;
+            public static int size, totalPhantom, totalFlag, tilesLeft;
             public int PosX, PosY, Number;
-            public bool isBomb, isFlag, isOpened;
+            public bool isPhantom, isFlag, isOpened;
 
             public Tile()
             {
-                isBomb = false;
+                isPhantom = false;
                 isFlag = false;
                 isOpened = false;
             }
@@ -159,7 +158,7 @@ namespace phantom_field.Windows.Game
                     for (int j = -1; j <= 1; j++)
                     {
                         if (tile == null || OutBound(tile.PosX + j, tile.PosY + i)) continue;
-                        else if (tileList[tile.PosY + i, tile.PosX + j].isBomb)
+                        else if (tileList[tile.PosY + i, tile.PosX + j].isPhantom)
                         {
                             tile.Number++;
                         }
@@ -187,7 +186,7 @@ namespace phantom_field.Windows.Game
                 {
                     if (OutBound(X + j, Y + i)) continue;
                     if (tileList[Y + i, X + j].isOpened) continue;
-                    else if (!tileList[Y + i, X + j].isBomb)
+                    else if (!tileList[Y + i, X + j].isPhantom)
                     {
                         OpenTile(tileList[Y + i, X + j]);
                         if (tileList[Y + i, X + j].Number == 0) OpenAdjacentTile(X + j, Y + i);
@@ -202,7 +201,7 @@ namespace phantom_field.Windows.Game
             Tile tile = (Tile)sender;
             if (tile.isFlag == false)
             {
-                if (tile.isBomb)
+                if (tile.isPhantom)
                 {
                     Audio.playLose();
                     OpenPopUpWindow(false);
