@@ -1,8 +1,10 @@
 ﻿using System;
+using System.Configuration;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using phantom_field.sounds;
 using phantom_field.Windows.Game;
 
 namespace phantom_field.Windows.MainMenu
@@ -21,6 +23,8 @@ namespace phantom_field.Windows.MainMenu
             CreateRowDef(4);
             CreateHeader();
             CreateButton();
+
+            this.Loaded += OnWindowLoaded;
         }
 
         protected override void CreateHeader()
@@ -61,6 +65,11 @@ namespace phantom_field.Windows.MainMenu
             else if (button.Content.ToString() == "Hard") GameWindow.level = 2;
             new GameWindow().Show();
             this.Close();
+        }
+
+        protected override void OnWindowLoaded(object sender, EventArgs e)
+        {
+            Audio.playBGM();
         }
 
         //private void CreateDock()

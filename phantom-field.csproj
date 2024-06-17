@@ -11,7 +11,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Audio\bgm.wav" />
+    <None Remove="Audio\door_open.wav" />
+    <None Remove="Audio\gushing_wind.wav" />
     <None Remove="Audio\lose.wav" />
+    <None Remove="Audio\phantom_exorcized.wav" />
+    <None Remove="Audio\phantom_laugh.wav" />
     <None Remove="Audio\start.wav" />
     <None Remove="Audio\win.wav" />
     <None Remove="Images\BGGame.png" />
@@ -20,16 +25,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Content Include="Audio\click.wav">
+    <Content Include="Audio\bgm.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\lose.wav">
+    <Content Include="Audio\door_open.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\start.wav">
+    <Content Include="Audio\gushing_wind.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Audio\win.wav">
+    <Content Include="Audio\phantom_exorcized.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Audio\phantom_laugh.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\BGGame.png">
