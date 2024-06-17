@@ -3,5 +3,8 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\pub
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\lose.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\start.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Audio\win.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Images\BGGame.png
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Images\Icon.ico
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Images\BGMainMenu.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\Images\BGPopUp.png
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\publish\win-x64\phantom-field.exe

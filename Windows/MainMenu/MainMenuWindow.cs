@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using phantom_field.Windows.Game;
 
 namespace phantom_field.Windows.MainMenu
@@ -12,6 +13,10 @@ namespace phantom_field.Windows.MainMenu
         {
             Title = "Main Menu";
             Height = 500; Width = 400;
+            
+            ImageBrush temp = new ImageBrush();
+            temp.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + @"/Images/BGMainMenu.png", UriKind.Relative));
+            Background = temp;
 
             CreateRowDef(4);
             CreateHeader();
@@ -23,8 +28,11 @@ namespace phantom_field.Windows.MainMenu
             Label title = new Label();
             title.Content = "Phantom Field";
             title.FontSize = 24;
+            title.Foreground = Brushes.White;
+            title.FontWeight = FontWeights.Bold;
             title.HorizontalAlignment = HorizontalAlignment.Center;
             title.VerticalAlignment = VerticalAlignment.Center;
+            Grid.SetRow(title, 0);
             GRID.Children.Add(title);
         }
 
@@ -55,9 +63,21 @@ namespace phantom_field.Windows.MainMenu
             this.Close();
         }
 
-        protected override void OnWindowClosing(object sender, EventArgs e)
-        {
-            
-        }
+        //private void CreateDock()
+        //{
+        //    MenuItem Open = new MenuItem();
+        //    MenuItem Close = new MenuItem();
+        //    MenuItem Save = new MenuItem();
+        //    Open.Header = "_Open";
+        //    Close.Header = "_Close";
+        //    Save.Header = "_Save";
+
+        //    Menu a = new Menu();
+        //    a.Items.Add(Open);
+        //    a.Items.Add(Close);
+        //    a.Items.Add(Save);
+
+        //    GRID.Children.Add(a);
+        //}
     }
 }

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using System.Windows.Threading;
 using phantom_field.sounds;
 using phantom_field.Windows.MainMenu;
@@ -15,12 +16,14 @@ namespace phantom_field.Windows.Game
         Label flag, time;
         DispatcherTimer dispatcherTimer;
         public static TimeSpan timeLeft;
-        static public int level;
+        public static int level;
+        public static double countdownTime;
         bool hasStarted;
 
         public GameWindow()
         {
             hasStarted = false;
+            countdownTime = 5;
             setSize();
             tileList = new Tile[Tile.size+1, Tile.size];
             setTotalBomb(GenerateRandomBomb());
@@ -34,6 +37,9 @@ namespace phantom_field.Windows.Game
 
             Title = "Phantom Field, Difficulty: " + getStringLevel(level);
             Height = 700; Width = 600;
+            ImageBrush temp = new ImageBrush();
+            temp.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + @"/Images/BGGame.png", UriKind.Relative));
+            Background = temp;
         }
 
         // Set Difficulty
@@ -57,11 +63,12 @@ namespace phantom_field.Windows.Game
         // Bombs
         int GenerateRandomBomb()
         {
+            int temp = Tile.size*Tile.size;
             switch (level)
             {
-                case 1: return new Random().Next(39, 49);
-                case 2: return new Random().Next(80, 100);
-                default: return new Random().Next(5, 6);
+                case 1: return new Random().Next((int)(temp*0.15), (int)(temp*0.2));
+                case 2: return new Random().Next((int)(temp*0.2), (int)(temp*0.25));
+                default: return new Random().Next((int)(temp*0.1), (int)(temp*0.15));
             }
         }
         
@@ -116,8 +123,6 @@ namespace phantom_field.Windows.Game
             newTile.PosX = X;
             newTile.PosY = Y;
             newTile.Background = Brushes.Orange;
-            newTile.BorderBrush = Brushes.Black;
-            newTile.Margin = new Thickness(0);
             newTile.Click += tile_clicked;
             newTile.MouseRightButtonUp += tile_flagged;
             tileList[Y, X] = newTile;
@@ -309,19 +314,14 @@ namespace phantom_field.Windows.Game
             }
         }
 
-        protected override void OnWindowLoaded(object sender, RoutedEventArgs e)
+        protected override void OnWindowLoaded(object sender, EventArgs e)
         {
             Audio.playStart();
         }
 
-        protected override void OnWindowClosing(object sender, EventArgs e)
-        {
-            
-        }
-
         private void CreateTimer()
         {
-            timeLeft = TimeSpan.FromMinutes(5);
+            timeLeft = TimeSpan.FromMinutes(countdownTime);
             dispatcherTimer = new DispatcherTimer();
             dispatcherTimer.Interval = new TimeSpan(0,0,0,1);
             dispatcherTimer.Tick += Countdown;
@@ -344,15 +344,11 @@ namespace phantom_field.Windows.Game
             rd.MaxHeight = 100;
             GRID.RowDefinitions.Add(rd);
 
-            Border header = new Border();
-            header.Background = new SolidColorBrush(Color.FromRgb(244, 117, 27));
-            Grid.SetColumnSpan(header, Tile.size);
-            GRID.Children.Add(header);
-
             flag = new Label();
             flag.Content = Tile.totalFlag.ToString();
             flag.FontSize = 24;
-            flag.Margin = new Thickness(10);
+            flag.Foreground = Brushes.White;
+            flag.Margin = new Thickness(40,0,0,0);
             flag.HorizontalAlignment = HorizontalAlignment.Left;
             flag.VerticalAlignment = VerticalAlignment.Center;
             Grid.SetColumnSpan(flag, Tile.size);
@@ -362,6 +358,7 @@ namespace phantom_field.Windows.Game
             CreateTimer();
             time.Content = timeLeft.ToString();
             time.FontSize = 24;
+            time.Foreground = Brushes.White;
             time.Margin = new Thickness(10);
             time.HorizontalAlignment = HorizontalAlignment.Center;
             time.VerticalAlignment = VerticalAlignment.Center;
@@ -371,7 +368,8 @@ namespace phantom_field.Windows.Game
             Label dif = new Label();
             dif.Content = getStringLevel(level);
             dif.FontSize = 24;
-            dif.Margin = new Thickness(10);
+            dif.Foreground = Brushes.White;
+            dif.Margin = new Thickness(0,0,70,0);
             dif.HorizontalAlignment = HorizontalAlignment.Right;
             dif.VerticalAlignment = VerticalAlignment.Center;
             Grid.SetColumnSpan(dif, Tile.size);

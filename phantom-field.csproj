@@ -14,6 +14,9 @@
     <None Remove="Audio\lose.wav" />
     <None Remove="Audio\start.wav" />
     <None Remove="Audio\win.wav" />
+    <None Remove="Images\BGGame.png" />
+    <None Remove="Images\BGMainMenu.png" />
+    <None Remove="Images\BGPopUp.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -29,7 +32,22 @@
     <Content Include="Audio\win.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Images\BGGame.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\Icon.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\BGMainMenu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Images\BGPopUp.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>

@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 using phantom_field.Windows.Game;
 using phantom_field.Windows.MainMenu;
 
@@ -12,12 +13,17 @@ namespace phantom_field.Windows.PopUp
         public MyWindow Parent;
         Label curTime, highScore;
         static TimeSpan[] HighScore = new TimeSpan[3];
+        bool isClicked;
 
         public PopUpWindow(bool Won)
         {
             Title = Won ? "Congratulations!" : "Nice try!";
             Height = 300; Width = Height;
+            ImageBrush temp = new ImageBrush();
+            temp.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + @"/Images/BGPopUp.png", UriKind.Relative));
+            Background = temp;
 
+            isClicked = false;
             CreateColRowDef(2);
             CreateHeader();
             UpdateHeader(Won);
@@ -28,11 +34,11 @@ namespace phantom_field.Windows.PopUp
         {
             if (Won)
             {
-                TimeSpan temp = TimeSpan.FromMinutes(5) - GameWindow.timeLeft;
+                TimeSpan temp = TimeSpan.FromMinutes(GameWindow.countdownTime) - GameWindow.timeLeft;
                 curTime.Content = temp.ToString();
                 if (temp != TimeSpan.Zero && HighScore[GameWindow.level] > temp || HighScore[GameWindow.level] == TimeSpan.Zero)
                 {
-                    HighScore[GameWindow.level] = TimeSpan.FromMinutes(5) - GameWindow.timeLeft;
+                    HighScore[GameWindow.level] = temp;
                 }
                 highScore.Content = HighScore[GameWindow.level].ToString();
             }
@@ -51,15 +57,24 @@ namespace phantom_field.Windows.PopUp
         {
             curTime = new Label();
             curTime.FontSize = 24;
-            curTime.HorizontalAlignment = HorizontalAlignment.Center;
+            curTime.Foreground = Brushes.White;
+            curTime.FontWeight = FontWeights.Bold;
+            curTime.HorizontalAlignment = HorizontalAlignment.Left;
             curTime.VerticalAlignment = VerticalAlignment.Center;
+            curTime.Margin = new Thickness(20, 0, 0, 40);
+            Grid.SetColumnSpan(curTime, 2);
+            Grid.SetRowSpan(curTime, 2);
             GRID.Children.Add(curTime);
 
             highScore = new Label();
             highScore.FontSize = 24;
-            highScore.HorizontalAlignment = HorizontalAlignment.Center;
+            highScore.Foreground = Brushes.White;
+            highScore.FontWeight = FontWeights.Bold;
+            highScore.HorizontalAlignment = HorizontalAlignment.Right;
             highScore.VerticalAlignment = VerticalAlignment.Center;
-            Grid.SetColumn(highScore, 1);
+            highScore.Margin = new Thickness(0, 0, 20, 40);
+            Grid.SetColumnSpan(highScore, 2);
+            Grid.SetRowSpan(highScore, 2);
             GRID.Children.Add(highScore);
         }
 
@@ -91,6 +106,7 @@ namespace phantom_field.Windows.PopUp
 
         void TryAgain_clicked(object sender, EventArgs e)
         {
+            isClicked = true;
             new GameWindow().Show();
             Parent.Close();
             this.Close();
@@ -98,6 +114,7 @@ namespace phantom_field.Windows.PopUp
 
         void Return_clicked(object sender, EventArgs e)
         {
+            isClicked = true;
             new MainMenuWindow().Show();
             Parent.Close();
             this.Close();
@@ -105,7 +122,9 @@ namespace phantom_field.Windows.PopUp
 
         protected override void OnWindowClosing(object sender, EventArgs e)
         {
-            
+            if (isClicked) return;
+            new MainMenuWindow().Show();
+            Parent.Close();
         }
     }
 }

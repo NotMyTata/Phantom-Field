@@ -18,3 +18,6 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\win
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\win-x64\phantom-field.genruntimeconfig.cache
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\win-x64\ref\phantom-field.dll
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\win-x64\Images\Icon.ico
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\win-x64\Images\BGGame.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\win-x64\Images\BGMainMenu.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\win-x64\Images\BGPopUp.png

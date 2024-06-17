@@ -18,3 +18,6 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\start.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\win.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Images\Icon.ico
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Images\BGMainMenu.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Images\BGPopUp.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Images\BGGame.png
