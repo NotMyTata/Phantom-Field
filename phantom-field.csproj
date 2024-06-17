@@ -22,6 +22,7 @@
     <None Remove="Images\BGGame.png" />
     <None Remove="Images\BGMainMenu.png" />
     <None Remove="Images\BGPopUp.png" />
+    <None Remove="Images\FlagTalisman.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -41,6 +42,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\BGGame.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\FlagTalisman.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Icon.ico">

@@ -4,10 +4,6 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\pha
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\phantom-field.csproj.CoreCompileInputs.cache
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\obj\Release\net8.0-windows\phantom-field.sourcelink.json
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\phantom-field.exe
-C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\click.wav
-C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\lose.wav
-C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\start.wav
-C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\win.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\phantom-field.deps.json
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\phantom-field.runtimeconfig.json
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\phantom-field.dll
@@ -21,3 +17,8 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Ima
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Images\BGGame.png
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Images\BGMainMenu.png
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Images\BGPopUp.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\bgm.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\door_open.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\gushing_wind.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\phantom_exorcized.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Release\net8.0-windows\Audio\phantom_laugh.wav

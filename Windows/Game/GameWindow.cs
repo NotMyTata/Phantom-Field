@@ -231,14 +231,18 @@ namespace phantom_field.Windows.Game
             if (tile.isFlag && !tile.isOpened)
             {
                 tile.isFlag = false;
-                tile.Content = "";
+                tile.Background = Brushes.Orange;
                 Tile.totalFlag++;
 
             }
             else if (tile.isFlag == false && Tile.totalFlag > 0 && !tile.isOpened)
             {
                 tile.isFlag = true;
-                tile.Content = "F";
+
+                ImageBrush temp = new ImageBrush(); 
+                temp.ImageSource = new BitmapImage(new Uri(AppDomain.CurrentDomain.BaseDirectory + @"/Images/FlagTalisman.png", UriKind.Relative));
+
+                tile.Background = temp;
                 Tile.totalFlag--;
             }
             flag.Content = Tile.totalFlag.ToString();
