@@ -7,16 +7,16 @@
       "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\game\\gamewindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\popup\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\popup\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\mainmenu\\mainmenuwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\mainmenu\\mainmenuwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\audio\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:audio\\audio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\popup\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|solutionrelative:windows\\popup\\popupwindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1F91D338-9A36-4A53-B351-4C0A707C8635}|phantom-field.csproj|c:\\users\\sasmita\\documents\\vs22\\pbo\\phantom-field\\windows\\mywindow.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,13 +42,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "PopUpWindow.cs",
               "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\PopUp\\PopUpWindow.cs",
               "RelativeDocumentMoniker": "Windows\\PopUp\\PopUpWindow.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\PopUp\\PopUpWindow.cs",
               "RelativeToolTip": "Windows\\PopUp\\PopUpWindow.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAwwCgAAAA3AAAA",
+              "ViewState": "AQIAAFcAAAAAAAAAAAAUwGUAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T03:32:01.685Z",
               "EditorCaption": ""
@@ -61,33 +61,33 @@
               "RelativeDocumentMoniker": "Windows\\Game\\GameWindow.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\Game\\GameWindow.cs",
               "RelativeToolTip": "Windows\\Game\\GameWindow.cs",
-              "ViewState": "AQIAALEAAAAAAAAAAAAkwL0AAAAVAAAA",
+              "ViewState": "AQIAAKYAAAAAAAAAAAAawK4AAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T03:25:38.11Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "MainMenuWindow.cs",
               "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\MainMenu\\MainMenuWindow.cs",
               "RelativeDocumentMoniker": "Windows\\MainMenu\\MainMenuWindow.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\MainMenu\\MainMenuWindow.cs",
               "RelativeToolTip": "Windows\\MainMenu\\MainMenuWindow.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAwwEcAAAAbAAAA",
+              "ViewState": "AQIAAEMAAAAAAAAAAAAIwEcAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T08:51:15.646Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "Audio.cs",
               "DocumentMoniker": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Audio\\Audio.cs",
               "RelativeDocumentMoniker": "Audio\\Audio.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Audio\\Audio.cs",
               "RelativeToolTip": "Audio\\Audio.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "ViewState": "AQIAABsAAAAAAAAAAIA9wCoAAAAfAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T03:46:33.173Z",
               "EditorCaption": ""
@@ -100,7 +100,7 @@
               "RelativeDocumentMoniker": "Windows\\MyWindow.cs",
               "ToolTip": "C:\\Users\\Sasmita\\Documents\\vs22\\PBO\\phantom-field\\Windows\\MyWindow.cs",
               "RelativeToolTip": "Windows\\MyWindow.cs",
-              "ViewState": "AQIAACkAAAAAAAAAAAA9wDQAAABbAAAA",
+              "ViewState": "AQIAACoAAAAAAAAAAAAowDQAAABbAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-16T03:31:26.112Z",
               "EditorCaption": ""
@@ -115,8 +115,7 @@
               "RelativeToolTip": "PhantomField.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-05T13:39:11.601Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-05T13:39:11.601Z"
             }
           ]
         }

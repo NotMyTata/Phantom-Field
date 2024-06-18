@@ -169,6 +169,11 @@ namespace phantom_field.Windows.Game
 
         void OpenTile(Tile tile)
         {
+            if (tile.isFlag)
+            {
+                Tile.totalFlag++;
+                flag.Content = Tile.totalFlag.ToString();
+            }
             tile.isOpened = true;
             if (tile.Number != 0)
             {
@@ -199,7 +204,8 @@ namespace phantom_field.Windows.Game
         void tile_clicked(object sender, EventArgs e)
         {
             Tile tile = (Tile)sender;
-            if (tile.isFlag == false)
+            if (tile.isFlag) Audio.playLockTalisman();
+            else
             {
                 if (tile.isPhantom)
                 {
@@ -237,6 +243,7 @@ namespace phantom_field.Windows.Game
             }
             else if (tile.isFlag == false && Tile.totalFlag > 0 && !tile.isOpened)
             {
+                Audio.playPlaceTalisman();
                 tile.isFlag = true;
 
                 ImageBrush temp = new ImageBrush(); 
