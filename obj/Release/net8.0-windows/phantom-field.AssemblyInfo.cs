@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("phantom-field")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Release")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+062cb44edd38ed09034c4e10bff4c00387c4ea64")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f7c9c7d6ed09219370aed0f4faa47efdf3edec4")]
 [assembly: System.Reflection.AssemblyProductAttribute("phantom-field")]
 [assembly: System.Reflection.AssemblyTitleAttribute("phantom-field")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

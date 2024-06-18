@@ -22,3 +22,6 @@ C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\gushing_wind.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\phantom_exorcized.wav
 C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\phantom_laugh.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Images\FlagTalisman.png
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\lock_talisman.wav
+C:\Users\Sasmita\Documents\vs22\PBO\phantom-field\bin\Debug\net8.0-windows\Audio\place_talisman.wav

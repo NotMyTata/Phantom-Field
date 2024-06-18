@@ -36,5 +36,17 @@ namespace phantom_field.sounds
             soundPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "/Audio/phantom_laugh.wav";
             soundPlayer.Play();
         }
+
+        static public void playPlaceTalisman()
+        {
+            soundPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "/Audio/place_talisman.wav";
+            soundPlayer.Play();
+        }
+
+        static public void playLockTalisman()
+        {
+            soundPlayer.SoundLocation = AppDomain.CurrentDomain.BaseDirectory + "/Audio/lock_talisman.wav";
+            soundPlayer.Play();
+        }
     }
 }

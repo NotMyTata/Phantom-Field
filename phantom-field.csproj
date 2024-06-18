@@ -14,14 +14,17 @@
     <None Remove="Audio\bgm.wav" />
     <None Remove="Audio\door_open.wav" />
     <None Remove="Audio\gushing_wind.wav" />
+    <None Remove="Audio\lock_talisman.wav" />
     <None Remove="Audio\lose.wav" />
     <None Remove="Audio\phantom_exorcized.wav" />
     <None Remove="Audio\phantom_laugh.wav" />
+    <None Remove="Audio\place_talisman.wav" />
     <None Remove="Audio\start.wav" />
     <None Remove="Audio\win.wav" />
     <None Remove="Images\BGGame.png" />
     <None Remove="Images\BGMainMenu.png" />
     <None Remove="Images\BGPopUp.png" />
+    <None Remove="Images\FlagTalisman.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,13 +37,22 @@
     <Content Include="Audio\gushing_wind.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Audio\lock_talisman.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Audio\phantom_exorcized.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Audio\phantom_laugh.wav">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Audio\place_talisman.wav">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="Images\BGGame.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Images\FlagTalisman.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Icon.ico">
